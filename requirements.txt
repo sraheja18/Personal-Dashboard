@@ -1,0 +1,9 @@
+dash
+yfinance
+plotly
+pandas
+requests
+smtplib
+numpy
+dotenv
+email.message
