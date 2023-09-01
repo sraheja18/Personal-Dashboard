@@ -129,7 +129,7 @@ app.layout = html.Div([
         html.Div(id ='msft-box', style=box_style),
         html.Div(id = 'tsla-box', style=box_style)
     ], style={'display': 'flex', 'width': '1000px', 'margin': 'auto'}),
-    dcc.Interval(id = 'interval-component', interval = 1000*3600, n_intervals = 0)  
+    dcc.Interval(id = 'interval-component', interval = 1000*3600*24, n_intervals = 0)  
 ])
 
 
