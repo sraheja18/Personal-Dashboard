@@ -31,7 +31,6 @@ class EmailService:
             smtp.login(self.address, self.password)
             smtp.send_message(msg)
 
-
 def get_stock_data(ticker):
     """Fetch stock data for Microsoft and Tesla over 7 days"""
     stock_data = yf.download(ticker, period='7d')
@@ -48,9 +47,6 @@ def get_meteo_data(lat = 47.6062, lon=122.3321):
         print(str(e))
         return None
 
-# Get weather data
-
-
 app = dash.Dash(__name__)
 
 box_style = {
@@ -64,6 +60,8 @@ box_style = {
 
 @app.callback([Output('subplot-graph','figure'),Output('msft-box','children'), Output('tsla-box','children')],[Input('interval-component', 'n_intervals')])
 def update_graph(n):
+
+    # Get weather data
     weather = get_meteo_data()
     weather = weather.rename(columns = {"time":"Date", "temperature_2m_max":"Max temp", "temperature_2m_min":"Min temp", 
     "precipitation_probability_max":"Precipitation Probability"})
